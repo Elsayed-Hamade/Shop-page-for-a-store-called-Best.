@@ -1,0 +1,211 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@400;700&display=swap');
+
+/* Basic Styling */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.%;
+    font-family: "poppins", sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #1C1C1C;
+    color: white;
+}
+
+/* img{
+    width: 100%;
+} */
+
+
+::-webkit-scrollbar{
+    width: .2rem;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: white;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #303030;
+}
+
+/* Header */
+
+header{
+    width: 100%;
+}
+
+nav{
+    background-color: #303030;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+nav a{
+    color: white;
+    transition: color .4s;
+}
+
+nav a:hover{
+    color: #8f8f8f;
+}
+
+nav h1{
+    font-family: "Abril Fatface", sans-serif;
+    font-weight: 100;
+    letter-spacing: 4px;
+    font-size: 3rem;
+}
+
+.top-title{
+    grid-column: span 5;
+    text-align: center;
+    margin: 2rem;
+    font-size: 2rem;
+}
+
+.top-title::before{
+    content: "";
+    background-color: #303030;
+    width: 25rem;
+    height: 25rem;
+    position: fixed;
+    border-radius: 50%;
+    z-index: -10;
+    opacity: .6;
+    left: -15rem;
+    top: 10rem;
+}
+.top-title::after{
+    content: "";
+    background-color: #303030;
+    width: 25rem;
+    height: 25rem;
+    position: fixed;
+    border-radius: 50%;
+    z-index: -10;
+    opacity: .6;
+    right: -15rem;
+    top: 20rem;
+}
+
+/* Main */
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 300px;
+    gap: 3rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.tall{
+    grid-row: span 2;
+}
+
+.short{
+    grid-row: span 1;
+}
+
+.product{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    position: relative;
+}
+
+.product:nth-child(1), .product:nth-child(6){
+    background-color: #FDE948;
+}
+
+.product:nth-child(2), .product:nth-child(5){
+    background-color: #FB443A;
+}
+
+.product:nth-child(4), .product:nth-child(7){
+    background-color: #FF9254;
+}
+
+.product:nth-child(4) img{
+    width: 80%;
+}
+
+.info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 2rem;
+}
+
+.btn{
+    background-color: white;
+    color: #1C1C1C;
+    padding: .5rem 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.247);
+    transition: all .2s ease-in;
+}
+
+i{
+    font-size: .8rem;
+    margin-left: .6rem;
+}
+
+.price{
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    color: #1C1C1C;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.247);
+    transition: all .2s ease-in;
+    cursor: default;
+    margin-left: 2rem;
+}
+
+.btn:hover, .price:hover{
+    background-color: #1C1C1C;
+    color: white;
+}
+
+@media screen and (max-width: 1000px) {
+    main{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 750px) {
+    main{
+        grid-template-columns: 1fr;
+    }
+    nav{
+        grid-template-columns: repeat(4, 1fr);
+        padding-bottom: 2rem;
+    }
+    .logo{
+        grid-column: 1 /span 4;
+        grid-row-start: 1;
+        margin-bottom: 1rem;
+    }
+
+}
